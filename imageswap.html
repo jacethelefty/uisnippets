@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>So More Funner</title>
+  <style media="screen">
+    .reveal{
+      width: 500px; height: 500px;
+      border: #000 1px solid;
+      float: left;
+      margin: 24px;
+    }
+    .reveal > img{
+      position: absolute;
+    }
+    .reveal > .img2{
+      clip:rect(0px, 140px, 500px, 0px);
+    }
+    .reveal > .activator{
+      position: absolute;
+      width: 500px; height: 500px;
+      opacity: 0;
+      cursor: e-resize;
+    }
+  </style>
+  <script type='text/javascript'>
+    function reveal (event) {
+      event.target.previousElementSibling.style.clip = "rect(0px, " +(event.clientX-event.target.offsetLeft)+"px, 500px, 0px)";
+    }
+  </script>
+</head>
+<body>
+
+  <div class="reveal">
+    <img src="birdie_color.jpg">
+    <img src="birdie_seph.jpg" class="img2">
+    <div class="activator" onmousemove="reveal(event)"></div>
+  </div>
+
+  <div class="reveal">
+    <img src="birdie_color.jpg">
+    <img src="birdie_seph.jpg" class="img2">
+    <div class="activator" onmousemove="reveal(event)"></div>
+  </div>
+
+</body>
+</html>
